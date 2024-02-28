@@ -264,7 +264,7 @@ void monero_transfer_utils::send_step1__prepare_params_for_get_decoys(
 	}
 
 	// TODO: factor this out to get spendable balance for display in the MM wallet:
-	while (using_outs_amount < potential_total && remaining_unusedOuts.size() > 0) {
+	while (remaining_unusedOuts.size() > 0) {
 		auto out = pop_random_value(remaining_unusedOuts);
 		if (!use_rct && (out.rct != none && (*out.rct).empty() == false)) {
 			// out.rct is set by the server
